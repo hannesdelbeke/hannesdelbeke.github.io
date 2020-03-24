@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>tech &#8211; Hannes Delbeke</title>
+	<atom:link href="http://hannesdelbeke.com/project-type/tech/feed/" rel="self" type="application/rss+xml" />
+	<link>http://hannesdelbeke.com</link>
+	<description>Technical Artist</description>
+	<lastBuildDate>Mon, 10 Sep 2018 21:14:18 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.2.5</generator>
+	<item>
+		<title>Level-design pipeline</title>
+		<link>http://hannesdelbeke.com/portfolio/level-design-pipeline/</link>
+				<pubDate>Sun, 02 Sep 2018 22:23:17 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		
+		<guid isPermaLink="false">http://hannesdelbeke.com/?post_type=jetpack-portfolio&#038;p=412</guid>
+				<description><![CDATA[Level-design pipeline One of my achievements at Freejam was the development of a new pipeline for creating levels, allowing for quicker gameplay iterations. I was in charge of the complete development process and reported to the Creative Director. The problem The previous pipeline required artists to edit and paint the terrain by hand when updating [&#8230;]]]></description>
+								<content:encoded><![CDATA[<h2>Level-design pipeline</h2>
+<p>One of my achievements at Freejam was the development of a new pipeline for creating levels, allowing for quicker gameplay iterations.<br />
+I was in charge of the complete development process and reported to the Creative Director.</p>
+<p><strong>The problem</strong></p>
+<p>The previous pipeline required artists to edit and paint the terrain by hand when updating levels. This time consuming process blocked the game-designers and reduced available development iterations. It also made it difficult to quickly try out a new idea since the designers had to rely on the artists.</p>
+<p><strong>The solution</strong></p>
+<p>The new pipeline gives the control to the designers, without any dependency on artists. Gameplay and art can now also be worked on simultaneously, freeing up time for both art and design, resulting in a much better map on release.</p>
+<p><strong>The process</strong></p>
+<ol>
+<li>The game designers block out a whitebox and test it with the QA team.</li>
+<li>The whitebox is imported in Worldmachine</li>
+<li>Create a 2D-mask for the gameplay areas to give level-designers exact control over the playable area.</li>
+<li>Draw splines for roads and landmarks, this will be used during the texturing pass.</li>
+<li>Run our custom node-setup to enhance the visual look of the terrain and generate textures.</li>
+<li>The final output is a heightmap and splatmap, which we input in Unity&#8217;s terrain.</li>
+</ol>
+<h3></h3>
+
+<!--Link JS Files-->
+<script src="http://hannesdelbeke.com/wp-content/plugins/portfolio-wp/js/jquery/jquery.modernizr.min.js"></script>
+<script src="http://hannesdelbeke.com/wp-content/plugins/portfolio-wp/js/crp-tiled-layer.js"></script>
+<script src="http://hannesdelbeke.com/wp-content/plugins/portfolio-wp/js/jquery/jquery.lightgallery.min.js"></script>
+
+
+<!--Link CSS Files-->
+<link href="http://hannesdelbeke.com/wp-content/plugins/portfolio-wp/css/crp-tiled-layer.css" rel="stylesheet" type="text/css" />
+<link href="http://hannesdelbeke.com/wp-content/plugins/portfolio-wp/css/lightgallery/lightgallery.css" rel="stylesheet" type="text/css" />
+<link href="http://hannesdelbeke.com/wp-content/plugins/portfolio-wp/css/crp-captions.css" rel="stylesheet" type="text/css" />
+
+
+<!--Here Goes CSS-->
+<style>
+    /* Portfolio Options Configuration Goes Here*/
+    #gallery div{
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        -webkit-transform: translate3d(0,0,0);
+    }
+
+  .lg-info{
+    position:fixed;
+    z-index:3;
+    left:10px;
+    top:10px;
+    padding:10px;
+    margin-right: 70px;
+    min-width: 300px;
+    max-width: 400px;
+    background-color: rgba(0,0,0,0.5);
+    color:#FFF; font-size:16px;
+  }
+
+  .lg-info h4,.lg-info h3,.lg-info h2 {
+        color: white;
+        text-transform:uppercase;
+        margin: 0px;
+        font-size: 17px;
+        line-height: 17px;
+        max-height: 40px;
+        overflow: hidden;
+    }
+
+    .lg-info p {
+        color: white;
+        margin-top: 4px;
+        font-size: 13px;
+        line-height: normal;
+        max-height: 100px;
+        overflow: auto;
+    }
+
+    /* Image 01 [ start ] */
+    .image01 .crp-tile-img {
+        transition-property: transform, filter, -webkit-filter;
+        transition-duration: .3s, .3s, .3s;
+        transition-delay: 0s, 0s, 0s;
+    }
+
+    /* Zoom In */
+    .image01 .crp-tile-img {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+    }
+
+    .image01:hover .crp-tile-img,
+    .image01:focus .crp-tile-img {
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    /* Image 01 [ end ] */
+
+    /* Portfolio Options Configuration Goes Here*/
+    #gallery .tile:hover{
+        cursor: pointer !important;
+    }
+
+
+    /* - - - - - - - - - - - - - - -*/
+    /* Tile Hover Customizations */
+
+    /* Customize overlay background */
+    #gallery .crp-tile-inner .overlay,
+    #gallery .tile .caption {
+        background-color: rgba(0,0,0,0.501960784314) !important;
+    }
+
+    #gallery .crp-tile-inner.crp-details-bg .details {
+        background-color: rgba(0,0,0,0.501960784314) !important;
+    }
+
+    #gallery .crp-tile-inner .details h3 {
+        color: #ffffff;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    #gallery .crp-tile-inner .details p {
+        color: #ffffff;
+        text-align: center;
+        font-size: 11px;
+    }
+
+        #gallery .crp-tile-inner .details h3 {
+        margin-bottom: 0px;
+    }
+    
+</style>
+
+<!--Here Goes HTML-->
+<div class="crp-wrapper">
+    <div id="gallery">
+        <div id="ftg-items" class="ftg-items">
+                            <div id="crp-tile-8" class="tile" data-url="">
+                                        <div class="crp-tile-inner details33 crp-details-bg image01">
+                    
+                    
+                    
+                    <a id="8" class="tile-inner">
+                                                <img class="crp-item crp-tile-img" src="http://hannesdelbeke.com/wp-content/uploads/2018/07/hannes-delbeke-dam-screen.jpg" data-width="1920" data-height="881" />
+                        <div class='overlay'></div>                    </a>
+                                        </div>
+
+                                    </div>
+                            <div id="crp-tile-7" class="tile" data-url="">
+                                        <div class="crp-tile-inner details33 crp-details-bg image01">
+                    
+                    
+                    
+                    <a id="7" class="tile-inner">
+                                                <img class="crp-item crp-tile-img" src="http://hannesdelbeke.com/wp-content/uploads/2018/07/hannes-delbeke-damwm.jpg" data-width="1920" data-height="938" />
+                        <div class='overlay'></div>                    </a>
+                                        </div>
+
+                                    </div>
+                            <div id="crp-tile-9" class="tile" data-url="">
+                                        <div class="crp-tile-inner details33 crp-details-bg image01">
+                    
+                    
+                    
+                    <a id="9" class="tile-inner">
+                                                <img class="crp-item crp-tile-img" src="http://hannesdelbeke.com/wp-content/uploads/2018/07/hannes-delbeke-dam1.jpg" data-width="1920" data-height="938" />
+                        <div class='overlay'></div>                    </a>
+                                        </div>
+
+                                    </div>
+                                        <ul id="crp-light-gallery" class="crp-light-gallery" style="display: none;" >
+                                    
+                    <li id="crp-light-gallery-item-8" data-src="http://hannesdelbeke.com/wp-content/uploads/2018/07/hannes-delbeke-dam-screen.jpg" data-sub-html="" data-url="">
+                        <a href="#">
+                            <img src="http://hannesdelbeke.com/wp-content/uploads/2018/07/hannes-delbeke-dam-screen-300x138.jpg" />
+                        </a>
+                    </li>
+                                    
+                    <li id="crp-light-gallery-item-7" data-src="http://hannesdelbeke.com/wp-content/uploads/2018/07/hannes-delbeke-damwm.jpg" data-sub-html="" data-url="">
+                        <a href="#">
+                            <img src="http://hannesdelbeke.com/wp-content/uploads/2018/07/hannes-delbeke-damwm-300x147.jpg" />
+                        </a>
+                    </li>
+                                    
+                    <li id="crp-light-gallery-item-9" data-src="http://hannesdelbeke.com/wp-content/uploads/2018/07/hannes-delbeke-dam1.jpg" data-sub-html="" data-url="">
+                        <a href="#">
+                            <img src="http://hannesdelbeke.com/wp-content/uploads/2018/07/hannes-delbeke-dam1-300x147.jpg" />
+                        </a>
+                    </li>
+                                </ul>
+                    </div>
+    </div>
+</div>
+
+
+<!--Here Goes JS-->
+<script>
+    (function($) {
+        $(document).ready(function(){
+
+            var tileParams = {};
+
+            if(0) {
+                tileParams.approxTileWidth = 250;
+                tileParams.approxTileHeight = 250;
+                tileParams.minTileWidth = 200;
+            }
+
+            if(0) {
+                tileParams.addBlock1Height = 40;
+                tileParams.addBlock2Height = 100;
+            }
+            jQuery('#gallery').crpTiledLayer(tileParams);
+
+            $( ".crp-light-gallery" ).each(function() {
+              var id = $( this ).attr("id");
+              $("#" + id).lightGallery({
+                mode: 'slide',
+                useCSS: true,
+                cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
+                easing: 'linear', //'for jquery animation',//
+                speed: 600,
+                addClass: '',
+
+                closable: true,
+                loop: true,
+                auto: false,
+                pause: 6000,
+                escKey: true,
+                controls: true,
+                hideControlOnEnd: false,
+
+                preload: 1, //number of preload slides. will exicute only after the current slide is fully loaded. ex:// you clicked on 4th image and if preload = 1 then 3rd slide and 5th slide will be loaded in the background after the 4th slide is fully loaded.. if preload is 2 then 2nd 3rd 5th 6th slides will be preloaded.. ... ...
+                showAfterLoad: true,
+                selector: null,
+                index: false,
+
+                lang: {
+                    allPhotos: 'All photos'
+                },
+                counter: false,
+
+                exThumbImage: false,
+                thumbnail: true,
+                showThumbByDefault:false,
+                animateThumb: true,
+                currentPagerPosition: 'middle',
+                thumbWidth: 150,
+                thumbMargin: 10,
+
+
+                mobileSrc: false,
+                mobileSrcMaxWidth: 640,
+                swipeThreshold: 50,
+                enableTouch: true,
+                enableDrag: true,
+
+                vimeoColor: 'CCCCCC',
+                youtubePlayerParams: false, // See: https://developers.google.com/youtube/player_parameters,
+                videoAutoplay: true,
+                videoMaxWidth: '855px',
+
+                dynamic: false,
+                dynamicEl: [],
+
+                // Callbacks el = current plugin
+                onOpen        : function(el) {}, // Executes immediately after the gallery is loaded.
+                onSlideBefore : function(el) {}, // Executes immediately before each transition.
+                onSlideAfter  : function(el) {}, // Executes immediately after each transition.
+                onSlideNext   : function(el) {}, // Executes immediately before each "Next" transition.
+                onSlidePrev   : function(el) {}, // Executes immediately before each "Prev" transition.
+                onBeforeClose : function(el) {}, // Executes immediately before the start of the close process.
+                onCloseAfter  : function(el) {}, // Executes immediately once lightGallery is closed.
+                onOpenExternal  : function(el, index) {
+                    if($(el).attr('data-url')) {
+                        var href = $(el).attr("data-url");
+                    } else {
+                        var href = $("#crp-light-gallery li").eq(index).attr('data-url');
+                    }
+                    if(href) {
+                        crp_loadHref(href,true);
+                    }else {
+                        return false;
+                    }
+
+                }, // Executes immediately before each "open external" transition.
+                onToggleInfo  : function(el) {
+                  var $info = $(".lg-info");
+                  if($info.css("opacity") == 1){
+                    $info.fadeTo("slow",0);
+                  }else{
+                    $info.fadeTo("slow",1);
+                  }
+                } // Executes immediately before each "toggle info" transition.
+              });
+            });
+
+            jQuery(".tile").on('click', function (event){
+                if(jQuery(event.target).hasClass('crp-product-buy-button')) {
+                    return false;
+                }
+                
+                event.preventDefault();
+                if(jQuery(event.target).hasClass("fa") && !jQuery(event.target).hasClass("zoom")) return;
+
+                                var tileId = jQuery(".tile-inner", jQuery(this)).attr("id");
+                var target = jQuery("#crp-light-gallery-item-"+tileId);
+                                target.trigger( "click" );
+            });
+
+        });
+    })( jQuery );
+
+</script>
+<style></style><script> jQuery(window).load(function() {});</script>
+<p><strong>Sketchfab tutorial</strong></p>
+<p>After developing Robocrafts leveldesign-pipeline in WorldMachine , I published a &#8220;intro to WorldMachine&#8221; for Sketchfab which can be seen <a href="https://blog.sketchfab.com/create-terrain-world-machine/">HERE</a>. This is a tutorial that shows you how to create a simplified version of our in-house pipeline.</p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Advanced Bend Modifier</title>
+		<link>http://hannesdelbeke.com/portfolio/script3/</link>
+				<pubDate>Fri, 06 Jul 2018 22:42:18 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		
+		<guid isPermaLink="false">https://hannesdelbeke.com/wp/?post_type=jetpack-portfolio&#038;p=202</guid>
+				<description><![CDATA[A maxscript that gives the user more control over the bend modifier. The width after applying the bend modifier is not predictable, so when assets need to snap on a grid this is a hassle. This script lets the user input a width and adjusts the bendmodifier to get the correct result. features: &#8211; uses [&#8230;]]]></description>
+								<content:encoded><![CDATA[<p>A maxscript that gives the user more control over the bend modifier.<br />
+The width after applying the bend modifier is not predictable, so when assets need to snap on a grid this is a hassle.<br />
+This script lets the user input a width and adjusts the bendmodifier to get the correct result.</p>
+<p>features:</p>
+<p>&#8211; uses smart snap to snap to a custom grid<br />
+&#8211; easily choose angle and direction<br />
+&#8211; apply new bend modifier with correct offset<br />
+&#8211; auto update current bendmodifier with selected settings<br />
+&#8211; realtime update of all settings!<br />
+&#8211; support for all 4 directions and 4 angles (90 180 270 360)<br />
+&#8211; choose your final width<br />
+&#8211; modify multiple selections at same time<br />
+&#8211; snap position to grid</p>
+<p><img class="alignnone size-full wp-image-225" src="http://hannesdelbeke.com/wp-content/uploads/2018/07/angle.gif" alt="" width="600" height="320" /> <img class="alignnone size-full wp-image-226" src="http://hannesdelbeke.com/wp-content/uploads/2018/07/manual.gif" alt="" width="600" height="440" /> <img class="alignnone size-full wp-image-227" src="http://hannesdelbeke.com/wp-content/uploads/2018/07/gridsnap.gif" alt="" width="600" height="440" /> <img class="alignnone size-full wp-image-228" src="http://hannesdelbeke.com/wp-content/uploads/2018/07/direction.gif" alt="" width="600" height="320" /></p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Explode Baker</title>
+		<link>http://hannesdelbeke.com/portfolio/script2/</link>
+				<pubDate>Thu, 05 Jul 2018 18:21:38 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		
+		<guid isPermaLink="false">https://hannesdelbeke.com/wp/?post_type=jetpack-portfolio&#038;p=68</guid>
+				<description><![CDATA[This script explodes a lowpoly mesh and makes sure that all high poly parts follow along. Usefull when working on advanced hardsurfaces meshes with multiple parts.]]></description>
+								<content:encoded><![CDATA[<p>This script explodes a lowpoly mesh and makes sure that all high poly parts follow along.<br />
+Usefull when working on advanced hardsurfaces meshes with multiple parts.</p>
+<p><img class="alignnone size-full wp-image-233" src="http://hannesdelbeke.com/wp-content/uploads/2018/07/explodehannesdelbeke.gif" alt="" width="697" height="382" /></p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Angle weighted normals</title>
+		<link>http://hannesdelbeke.com/portfolio/script1/</link>
+				<pubDate>Wed, 04 Jul 2018 23:41:24 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		
+		<guid isPermaLink="false">https://hannesdelbeke.com/wp/?post_type=jetpack-portfolio&#038;p=42</guid>
+				<description><![CDATA[A script that snaps the mesh normals to 90 degrees, achieving hard surface effects similar to sub D modeling but with less triangles.]]></description>
+								<content:encoded><![CDATA[<p>A script that snaps the mesh normals to 90 degrees, achieving hard surface effects similar to sub D modeling but with less triangles.<br />
+<img class="alignnone size-full wp-image-237" src="http://hannesdelbeke.com/wp-content/uploads/2018/07/angle-weighted-normals-presentation.jpg" alt="" width="1043" height="714" srcset="http://hannesdelbeke.com/wp-content/uploads/2018/07/angle-weighted-normals-presentation.jpg 1043w, http://hannesdelbeke.com/wp-content/uploads/2018/07/angle-weighted-normals-presentation-300x205.jpg 300w, http://hannesdelbeke.com/wp-content/uploads/2018/07/angle-weighted-normals-presentation-768x526.jpg 768w, http://hannesdelbeke.com/wp-content/uploads/2018/07/angle-weighted-normals-presentation-1024x701.jpg 1024w" sizes="(max-width: 1043px) 100vw, 1043px" /></p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>DesaturateLights</title>
+		<link>http://hannesdelbeke.com/portfolio/desat/</link>
+				<pubDate>Sat, 10 Sep 2016 21:06:25 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		
+		<guid isPermaLink="false">http://hannesdelbeke.com/?post_type=jetpack-portfolio&#038;p=415</guid>
+				<description><![CDATA[C# &#8211; Unity A tool to desaturate and tint lights in Unity. Great to select multiple lights and reduce saturation a bit, or make them all a bit warmer or colder.]]></description>
+								<content:encoded><![CDATA[<p>C# &#8211; Unity<br />
+A tool to desaturate and tint lights in Unity.<br />
+Great to select multiple lights and reduce saturation a bit, or make them all a bit warmer or colder.</p>
+<p><img class="alignnone size-full wp-image-416" src="http://hannesdelbeke.com/wp-content/uploads/2018/09/UnityLightDesat.gif" alt="" width="522" height="316" /></p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Mud demon rig</title>
+		<link>http://hannesdelbeke.com/portfolio/mud-demon-rig/</link>
+				<pubDate>Wed, 08 Jul 2015 12:19:23 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		
+		<guid isPermaLink="false">https://hannesdelbeke.com/wp/?post_type=jetpack-portfolio&#038;p=309</guid>
+				<description><![CDATA[A rig for a mud demon from the movie Riddick.]]></description>
+								<content:encoded><![CDATA[<p>A rig for a mud demon from the movie Riddick.</p>
+<p><iframe width="760" height="430" src="https://www.youtube.com/embed/HQqgIhQpOtE?rel=0&amp;showinfo=0&#038;amp" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>cyclops rig</title>
+		<link>http://hannesdelbeke.com/portfolio/cyclops-rig/</link>
+				<pubDate>Wed, 08 Jul 2015 12:18:20 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		
+		<guid isPermaLink="false">https://hannesdelbeke.com/wp/?post_type=jetpack-portfolio&#038;p=308</guid>
+				<description><![CDATA[A rig for the cyclops machine from the movie Riddick]]></description>
+								<content:encoded><![CDATA[<p>A rig for the cyclops machine from the movie Riddick<br />
+<iframe width="760" height="430" src="https://www.youtube.com/embed/nkxzxLGG4hs?rel=0&amp;showinfo=0&#038;amp" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Knight rig</title>
+		<link>http://hannesdelbeke.com/portfolio/knight-rig/</link>
+				<pubDate>Wed, 08 Jul 2015 09:32:38 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		
+		<guid isPermaLink="false">https://hannesdelbeke.com/wp/?post_type=jetpack-portfolio&#038;p=272</guid>
+				<description><![CDATA[]]></description>
+								<content:encoded><![CDATA[<p><iframe width="760" height="430" src="https://www.youtube.com/embed/NIFn9ZL6sno?rel=0&amp;showinfo=0&#038;amp" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Fire Boss Minion</title>
+		<link>http://hannesdelbeke.com/portfolio/fire-boss-minion/</link>
+				<pubDate>Tue, 07 Jul 2015 11:52:06 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		
+		<guid isPermaLink="false">https://hannesdelbeke.com/wp/?post_type=jetpack-portfolio&#038;p=306</guid>
+				<description><![CDATA[A small character I made based on minions. This was modeled, textured and rigged in 2 days.]]></description>
+								<content:encoded><![CDATA[<p>A small character I made based on minions. This was modeled, textured and rigged in 2 days.</p>
+<p><iframe width="760" height="450" src="https://www.youtube.com/embed/9vLTErlgoi0?rel=0&amp;showinfo=0&#038;amp" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+]]></content:encoded>
+										</item>
+		<item>
+		<title>Localized screenshot exporter</title>
+		<link>http://hannesdelbeke.com/portfolio/localized-screenshot-exporter/</link>
+				<pubDate>Tue, 08 Jul 2014 20:02:14 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		
+		<guid isPermaLink="false">https://hannesdelbeke.com/wp/?post_type=jetpack-portfolio&#038;p=324</guid>
+				<description><![CDATA[When I worked at The Gamebakers we needed to export localized marketing screenshots. There were 10 screenshots, in 10 languages, and 7 resolutions (for different devices) 10*10*7 = 700 At slightly under 1 minute per screenshot this took a few days when done by hand. I created a Photoshop script that automated 90% of the [&#8230;]]]></description>
+								<content:encoded><![CDATA[<p>When I worked at The Gamebakers we needed to export localized marketing screenshots.<br />
+There were 10 screenshots, in 10 languages, and 7 resolutions (for different devices)<br />
+10*10*7 = 700<br />
+At slightly under 1 minute per screenshot this took a few days when done by hand.<br />
+I created a Photoshop script that automated 90% of the pipeline, resulting in less than an hour of work to export all screenshots.<br />
+Now we only had to go trough the localisation layers in Photoshop and make sure they followed the naming convention, and then click export.</p>
+]]></content:encoded>
+										</item>
+	</channel>
+</rss>
